@@ -4,7 +4,7 @@ router.use('/', require('./swagger'));
 
 router.get('/', (req, res) => {
     //#swagger.tags=['Hello World']
-    res.send('Hellow World');
+    res.send('Hello World');
 });
 
 router.use('/dogs', require('./dogs'));
