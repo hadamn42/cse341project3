@@ -13,6 +13,16 @@ const breedRules = () => {
     ];
 };
 
+const catRules = () => {
+    return [
+        body('Breed').isString().notEmpty(),
+        body('Age').isInt().notEmpty(),
+        body('Weight').isInt().notEmpty(),
+        body('Color').isString().notEmpty(),
+        body('Gender').isString().notEmpty()
+    ];
+};
+
 const validate = (req, res, next) => {
     const errors = validationResult(req);
     if(errors.isEmpty()){
@@ -28,5 +38,6 @@ const validate = (req, res, next) => {
 
 module.exports = {
     breedRules,
+    catRules,
     validate
 };
