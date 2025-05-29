@@ -20,14 +20,10 @@ const getSingle = async(req, res) => {
     const breedId = new objectId(req.params.id);
     try {
         const result = await mongodb.getDatabase().db('dogs').collection('cats').find({ _id: breedId });
-        if(result.Content-Length <= 0){
-            throw new Error();
-        }else{
-            result.toArray().then((kitties) => {
-                res.setHeader('Content-Type', 'application/json');
-                res.status(200).json(kitties[0]);
+        result.toArray().then((kitties) => {
+            res.setHeader('Content-Type', 'application/json');
+            res.status(200).json(kitties[0]);
             });
-        }
     }catch (error) {
         res.status(400).json(error || 'Invalid ID');
     }

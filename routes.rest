@@ -4,7 +4,7 @@
 GET http://localhost:8080/dogs
 
 ### Get dog by id
-GET http://localhost:8080/dogs/6830956064b3aa02c55c07f8
+GET http://localhost:8080/dogs/682f8e06b868b8548d6ec906
 
 ### Create dog
 POST http://localhost:8080/dogs HTTP/1.1
@@ -44,7 +44,7 @@ DELETE http://localhost:8080/dogs/6830d7226644fbbe50d5574d
 GET http://localhost:8080/cats
 
 ### Get cats by id
-GET http://localhost:8080/cats/68388a08aef9812ecf648173
+GET http://localhost:8080/cats/6835d9b3420dc5c7d190cc96
 
 ### Create cat
 POST http://localhost:8080/cats HTTP/1.1
