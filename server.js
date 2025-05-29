@@ -1,4 +1,5 @@
-// database gathered from https://gist.github.com/kastriotadili/acc722c9858189440d964db976303078
+// dog data set gathered from https://gist.github.com/kastriotadili/acc722c9858189440d964db976303078
+// cat data set gathered from https://www.kaggle.com/datasets/waqi786/cats-dataset
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./data/database');

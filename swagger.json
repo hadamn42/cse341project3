@@ -5,7 +5,7 @@
     "description": "Contact API",
     "version": "1.0.0"
   },
-  "host": "cse341project3.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
     "http",
@@ -25,7 +25,7 @@
         }
       }
     },
-       "/dogs/": {
+    "/dogs/": {
       "get": {
         "tags": [
           "Dogs"
@@ -37,6 +37,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Error"
           }
         }
       },
@@ -84,8 +87,11 @@
           "204": {
             "description": "No Content"
           },
+          "400": {
+            "description": "Error"
+          },
           "422": {
-            "description": "Error: Unprocessable Entity"
+            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"
@@ -113,6 +119,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Error"
           }
         }
       },
@@ -166,8 +175,11 @@
           "204": {
             "description": "No Content"
           },
+          "400": {
+            "description": "Error"
+          },
           "422": {
-            "description": "Error: Unprocessable Entity"
+            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"
@@ -190,6 +202,172 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "400": {
+            "description": "Error"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/cats/": {
+      "get": {
+        "tags": [
+          "Cats"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Cats"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Breed": {
+                  "example": "any"
+                },
+                "Age": {
+                  "example": "any"
+                },
+                "Weight": {
+                  "example": "any"
+                },
+                "Color": {
+                  "example": "any"
+                },
+                "Gender": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Error"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/cats/{id}": {
+      "get": {
+        "tags": [
+          "Cats"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cats"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Breed": {
+                  "example": "any"
+                },
+                "Age": {
+                  "example": "any"
+                },
+                "Weight": {
+                  "example": "any"
+                },
+                "Color": {
+                  "example": "any"
+                },
+                "Gender": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Error"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Cats"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Error"
           },
           "500": {
             "description": "Internal Server Error"
